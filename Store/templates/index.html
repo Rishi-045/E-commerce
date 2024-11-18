@@ -1,0 +1,114 @@
+{%extends 'base.html'%} {% block content%} {% load cart %}
+<div
+  class="container-fluid d-flex justify-content-center pb-5 card-container mb-0"
+  style="height:100%" >
+  <div class="row">
+    <!-- filter -->
+    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 mt-2 mx-auto sidebar_fixed" >
+      <div class="list-group">
+        <a href="/" class="list-group-item list-group-item-action fw-semibold"
+          >All Products</a
+        >
+
+        {% for categories in categories %}
+        <!-- how to send id to server we use query string -->
+        <a
+          href="/?categories={{categories.id}}"
+          class="list-group-item list-group-item-action fw-semibold"
+          >{{categories.name}}</a
+        >
+        {% endfor %}
+      </div>
+      
+    </div>
+
+    <!-- product card  -->
+
+    <div class="row col-lg-9 col-md-9 col-sm-8  product_card" >
+      {% for product in products %}
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mt-2"  >
+        <div class="card h-100"  >
+          <div class="card-body " id="{{product.id}}">
+            <div class="card-img-actions" >
+              <img
+                src="{{product.image.url}}"
+                class="card-img img-fluid"
+                width="96"
+                height="350"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <div class="card-body bg-light text-center">
+            <div class="mb-1">
+              <h4 class="fw-bolder mb-2">
+                <a href="#" class="text-black mb-2" data-abc="true"
+                  >{{product.name}}</a
+                >
+              </h4>
+
+              <a href="#" class="text-muted" data-abc="true"
+                >{{product.description}}</a
+              >
+            </div>
+
+            <h4 class="mb-0 fw-semibold">&#8377;{{product.price}}</h4>
+
+            <div>
+              <i class="fa fa-star star text-warning"></i>
+              <i class="fa fa-star star text-warning"></i>
+              <i class="fa fa-star star text-warning"></i>
+              <i class="fa fa-star star text-warning"></i>
+            </div>
+
+            <div class="text-muted mb-1">34 reviews</div>
+            <!-- {% if request.session.cart %}
+             {{ product | is_in_cart:request.session.cart }}
+            {% endif %} -->
+          </div>
+          <div class="footer card-footer m-0 px-4 pb-3" >
+            {% if product|is_in_cart:request.session.cart %}
+            <div class="row">
+              <form action="/#{{product.id}}" method="post"  class="col-2">
+                {% csrf_token %}
+              <input type="text" name="product" value="{{product.id}}" hidden />
+              <input type="text" name="remove" value="True" hidden />
+                <input
+                type="submit"
+                value=" - "
+                class=" btn btn-block btn-secondary"
+              />
+              </form>
+              <div class="text-center mt-2 col"><h6><b>{{product|cart_quantity:request.session.cart }} in cart</b></h6></div>
+              <form action="/#{{product.id}}" method="post"  class="col-2">
+                {% csrf_token %}
+              <input type="text" name="product" value="{{product.id}}" hidden />
+                <input
+                type="submit"
+                value=" + "
+                class=" btn btn-block btn-secondary"
+              />
+              </form>
+            </div>
+            {% else %}
+
+            <form action="/#{{product.id}}" method="POST" class="text-center">
+              {% csrf_token %}
+              <input type="text" name="product" value="{{product.id}}" hidden />
+
+              <button type="submit" class="btn bg-cart">
+                <i class="fa fa-cart-plus mr-2"></i> Add To Cart
+              </button>
+            </form>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock%}

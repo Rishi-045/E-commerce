@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="confirmation-container-body " >
+    <div class="confirmation-container form-body " >
+        <div class="confetti"></div>
+        <div class="checkmark-container">
+            <div class="checkmark">
+                <svg viewBox="0 0 52 52" class="checkmark-svg">
+                    <path class="checkmark-path" fill="none" d="M14 27l8 8 16-16"></path>
+                </svg>
+            </div>
+        </div>
+        <h1><b>Thank You for Your Order!</b></h1>
+        <p>Your order has been confirmed and will be processed shortly.</p>
+        <a href="/"><button class="back-home-btn">Continue Shopping</button></a>
+   </div>
+    </div>
+
+{% endblock %}

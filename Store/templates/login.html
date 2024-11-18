@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+<div class="container-fluid sign-up-body m-0 " style="height:100vh">
+    <div class="p-4">
+        <div class="col-lg-5 mx-auto border rounded p-4 form-body login-body">
+            <form action="/login" method="POST">
+
+                {% csrf_token %}
+                <header class="signup-header">
+                    <h1 class="fw-bold">Login</h1>
+                    <!-- <p class="fw-lighter">its just take 30 seconds</p> -->
+                </header>
+
+                <!-- alert -->
+                {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{error}}
+                </div>
+                {% endif %}
+                
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email" class="form-label fw-bold">Email :</label>
+                    <input required type="email" class="form-control form-control-sm" value="{{values.email}}" id="email" name="Email"
+                        placeholder="example@gmail.com">
+
+                </div>
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="Password" class="form-label fw-bold">Password :</label>
+                    <input type="password" class="form-control form-control-sm" id="Password" placeholder="*******"
+                        name="Password">
+
+                </div>
+
+                <div class="form-group mt-2 sign-up-button">
+                    <input type="submit" value="Login" class="btn btn-sm btn-outline form-control-sm ">
+                </div>
+
+                <footer class="signup-footer">
+                    <p>Don't have an account? <a href="/signup">Sign up</a></p>
+                </footer>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

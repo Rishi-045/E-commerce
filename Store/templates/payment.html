@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="payment-gateway-page sign-up-body" style="height:100%" >
+    <div class="payment-container m-4 form-body">
+        <h2 >Select Payment Method</h2>
+
+        <!-- QR Code Payment Option -->
+
+       <div class="main-payment-option-container">
+        <a href="/qr-page" style="text-decoration: none; color: inherit;">
+            <div class="payment-option">
+                <h5><b>Pay Using QR Code</b></h5>
+                <p>Scan the QR code to make a payment.</p>
+        </a>
+        </div>
+
+        <!-- Cash on Delivery Payment Option -->
+        <div class="payment-option mb-0">
+            <a href="/order-confirmation" style="text-decoration: none; color: inherit;">
+                <h5><b>Cash on Delivery</b></h5>
+                <p>Pay with cash when your order is delivered at your doorstep.</p>
+            </a>
+        </div>
+       </div>
+    </div>
+</div>
+
+{% endblock %}

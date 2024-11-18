@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+<!-- alert for submission -->
+
+
+    <div class="container-fluid sign-up-body ">
+  
+        <div class="p-4 ">
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} removeClass"  id="msg" role="alert">
+                {{message}}
+            </div>
+            {% endfor %}
+            {% endif %}
+            <div class="col-lg-5 mx-auto border rounded p-4 form-body">
+                
+                <form action="/signup" method="POST">
+                    
+                    
+    
+                    {% csrf_token %}
+                    <header class="signup-header">
+                        <h1 class="fw-bold">SignUp</h1>
+                        <p class="fw-lighter">its just take 30 seconds</p>
+                    </header>
+    
+                    <!-- alert -->
+                    {% if error %}
+                    <div class="alert alert-danger" role="alert">
+                        {{error}}
+                    </div>
+                    {% endif %}
+                    <!-- fname -->
+                    <div class="form-group ">
+                        <label for="fname" class="form-label fw-bold">First Name : </label>
+                        <input type="text"  class="form-control form-control-sm " value="{{values.first_name}}" id="fname" name="FirstName">
+    
+                    </div>
+                    <!-- lname -->
+                    <div class="form-group">
+                        <label for="lname" class="form-label fw-bold">Last Name :</label>
+                        <input type="text" class="form-control form-control-sm" value="{{values.last_name}}" id="lname" name="LastName">
+    
+                    </div>
+    
+    
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="email" class="form-label fw-bold">Email :</label>
+                        <input required type="email" class="form-control form-control-sm" value="{{values.email}}" id="email" name="Email"
+                            placeholder="example@gmail.com">
+    
+                    </div>
+    
+                    <!-- Phone -->
+                    <div class="form-group">
+                        <label for="number" class="form-label fw-bold">Phone : </label>
+                        <input type="tel" class="form-control form-control-sm" value="{{values.phone}}" id="number" placeholder="1234567890"
+                            name="Phone">
+    
+                    </div>
+    
+                    <!-- Password -->
+                    <div class="form-group">
+                        <label for="Password" class="form-label fw-bold">Password :</label>
+                        <input type="password" class="form-control form-control-sm" id="Password" placeholder="*******"
+                            name="Password">
+    
+                    </div>
+    
+    
+    
+    
+                    <div class="form-group mt-2 sign-up-button">
+                        <input type="submit" value="Create An Account" class="btn btn-sm btn-outline form-control-sm ">
+                    </div>
+    
+                    <footer class="signup-footer">
+                        <p>Already have an account? <a href="/login">log in</a></p>
+                    </footer>
+    
+    
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

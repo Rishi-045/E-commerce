@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% load cart %}
+
+<div class="container-fluid sign-up-body m-0 p-5" style="height:100%">
+    <div class=" rounded p-4 bg-white ">
+        <div
+            class="table-responsive"
+        >   <p class="display-4">Order List</p>
+            <table
+                class="table "
+            >
+                <thead>
+                    <tr>
+                        <th scope="col">SNO.</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Total</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in orders %}
+                    <tr class="">
+                        <td scope="row">{{forloop.counter}}</td>
+                        <td><img src="{{order.product.image.url}}" class="rounded float-start d-block" alt="product image" height="80px"></td>
+                        <td>{{order.product.name}}</td>
+                        <td>{{order.date}}</td>
+                        <td>&#8377;{{order.price}}</td>
+                        <td>{{order.quantity}}</td>
+                        <td>&#8377;{{order.quantity|multiply:order.price}}</td>
+                        {% if order.status %}
+                        <td><small class="badge bg-success">Completed</small></td>
+                        {% else %}
+                        <td><small class="badge bg-warning">Pending</small></td>
+                        {% endif %}
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+               
+            </table>
+        </div>
+       
+    </div>
+</div>
+<!-- modal -->
+
+
+
+{% endblock %}

@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Jost:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Pacifico&display=swap');
+
+
+a{
+    text-decoration: none;
+}
+
+/* index */
+
+.card-container {
+    margin: 0;
+    font-family: "Lato", sans-serif;
+    /* font-family: Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"; */
+    font-size: .8125rem;
+    font-weight: 400;
+    line-height: 1.5385;
+    color: #333;
+    text-align: left;
+    background-color: #ececec;
+    margin-bottom: 30px;
+    }
+
+.mt-50{
+    
+    margin-top: 50px;
+}
+
+.mb-50{
+
+    margin-bottom: 50px;
+}
+
+
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .1875rem;
+}
+
+.card-img-actions {
+    position: relative;
+}
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.card-img{
+
+    width: 350px;
+    transition-property: box-shadow transform ;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+.card-img:hover{
+    transform: scale(1.04);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+}
+.star{
+        color: red;
+}
+
+.bg-cart {
+    background-color:#0295db;
+    color:white;
+}
+
+.bg-cart:hover {
+    border:1px solid #0295db;
+    color:#0295db;
+}
+
+.bg-buy {
+    background-color:green;
+    color:#fff;
+    padding-right: 29px;
+}
+.bg-buy:hover {
+    
+    color:#fff;
+}
+
+a{
+
+    text-decoration: none !important;
+}
+.card-footer{
+    border: none;
+}
+
+/* sign up page  */
+
+.sign-up-body{
+    background-color:#ececec;
+    
+ }
+.form-body{
+    background: linear-gradient(to top left, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.sign-up-button input{
+    border: none;
+    background-color: #0295db;
+    color: white;
+   
+}
+.sign-up-button input:hover{
+   border: 1px solid #0295db;
+   color: #0295db;
+   background-color: white;
+}
+
+
+/* navigation bar  */
+.navbar-expand-lg{
+    background-color: #142d4c;
+    
+}
+
+.text-colour{
+    color: white;
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    
+}
+.text-colour:hover{
+    color: #f95959;
+    
+}
+.ecom-logo{
+    
+  font-family: "Berkshire Swash", serif;
+  font-weight: 500;
+  font-style: normal;
+  margin-top: .1rem;
+    
+}
+
+/* utility classes */
+.bt{
+    border-top: none;
+}
+.bb{
+    border-bottom: none;
+}
+.bl{
+    border-left: none;
+}
+.br{
+    border-right: none;
+}
+tr:hover {background-color: #ececec;}
+
+/* payment page */
+.payment-gateway-page{
+    font-family: 'Lato', sans-serif;
+    /* background-color: #ececec; */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.payment-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); */
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    
+
+}
+
+.payment-container h2 {
+    margin-top: -30px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+}
+.payment-option {
+    margin: 20px 0;
+    padding: 20px;
+    border: 2px solid #0295db;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #f0f8ff;
+}
+.payment-option:hover {
+    background-color: #0295db;
+    color: #fff;
+    border-color: #0295db;
+}
+.payment-option img {
+    max-width: 150px;
+    margin: 15px 0;
+}
+.payment-option p {
+    font-size: 14px;
+    color: #555;
+    margin: 10px 0 0;
+}
+
+/* order confrimation page */
+.confirmation-container-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 70vh; */
+    min-height:100vh;
+    background-color: #ececec;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+/* Container Styling */
+.confirmation-container {
+   
+    background: #fff;
+    border-radius: 12px;
+    padding: 60px 40px;
+    text-align: center;
+    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); */
+    position: relative;
+    z-index: 1;
+}
+
+/* Checkmark Animation */
+.checkmark-container {
+    margin-bottom: 20px;
+    animation: pulse 1s infinite;
+}
+
+.checkmark {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto;
+}
+
+.checkmark-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.checkmark-path {
+    stroke: #0295db;
+    stroke-width: 5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: checkmarkAnimation 0.6s ease forwards;
+}
+
+@keyframes checkmarkAnimation {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Pulsating Effect */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Text Styling */
+.confirmation-container-body h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.confirmation-container-body p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* Button Styling */
+.back-home-btn {
+    background-color: #0295db;
+    color: #fff;
+    border: none;
+    padding: 14px 24px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.back-home-btn:hover {
+    border:1px solid #0295db;
+    background-color: white;
+    color: #0295db;
+    /* transform: scale(1.05); */
+}
+
+/* Confetti Animation */
+.confetti {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    animation: confettiFall 4s ease-out forwards;
+}
+
+@keyframes confettiFall {
+    0% {
+        transform: translateY(-100%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+/* qr-code */
+.qr-body{
+    background-color:#ececec;
+    font-family: Lato, sans-serif;
+    min-height: 100vh;
+}
+
+.qr-payment-container {
+    margin-top: 50px;
+    text-align: center;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.qr-code {
+    width: 200px;
+    height: 200px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    animation: pulse 2s infinite;
+}
+
+.payment-details {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #343a40;
+}
+
+.pay-button {
+    background-color: #0295db;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 12px;
+    transition: background-color 0.5s ease;
+}
+
+.pay-button:hover {
+    border: 1px solid #0295db;
+  background-color: white;
+ color: #0295db;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* media queries */
+@media screen and (min-width: 1000px) {
+    .sidebar_fixed{
+position: fixed;
+}
+.product_card{
+    margin-left: 330px;
+}
+  }

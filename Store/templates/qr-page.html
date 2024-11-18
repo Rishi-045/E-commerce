@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="qr-body">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="qr-payment-container">
+                    <h2><b>QR Code Payment</b></h2>
+                    <img src="static/images/sw-qr1.jpg" alt="QR Code" class="qr-code">
+                    <p class="payment-details">Scan the QR code to pay.</p>
+                    <a href="/order-confirmation"><button class="pay-button">Confirm Payment</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </div>
+
+{% endblock %}
